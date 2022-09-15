@@ -2,7 +2,7 @@ public class Employee {
     private String fIO;
     private int department;
     private float salary;
-    private static int id;
+    private int id;
     private static int counter;
 
     public Employee(String fio, int department, float salary) {
@@ -18,9 +18,8 @@ public class Employee {
     public float getSalary() { return salary; }
 
 
-    public void SetFIO(String fio) { this.fIO = fio; }
-    public void SetDepartment(int department) { this.department = department; }
-    public void SetSalary(float sal) { this.salary = salary; }
+    public void setDepartment(int department) { this.department = department; }
+    public void setSalary(float sal) { this.salary = salary; }
 
     @Override
     public String toString() {

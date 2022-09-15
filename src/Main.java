@@ -1,5 +1,5 @@
 public class Main {
-    public static Employee[] employees = new Employee[10];
+   private static Employee[] employees = new Employee[10];
     public static void main(String[] args) {
         employees[0] = new Employee("ФИО", 1, 31000f);
         employees[1] = new Employee("ФИО", 2, 32500f);
@@ -18,19 +18,19 @@ public class Main {
         System.out.println("Среднее значение зарплат = " + getEmployeeAverageSalaries ());
         printNameAllEmployee();
     }
-    public static void printAllEmployee () {
+    private static void printAllEmployee () {
         for (Employee employee: employees) {
             System.out.println(employee);
         }
     }
-    public static float getAmountOfSalaries () {
+    private static float getAmountOfSalaries () {
         float sum = 0f;
         for (Employee employee: employees) {
             sum = sum + employee.getSalary();
         }
         return sum;
     }
-    public static Employee getEmployeeMinSalaries () {
+    private static Employee getEmployeeMinSalaries () {
         float minSalaries = Float.MAX_VALUE;
         Employee employeeMinSalaries = null;
         for (int i = 0; i < employees.length; i++) {
@@ -41,7 +41,7 @@ public class Main {
         }
         return employeeMinSalaries;
     }
-    public static Employee getEmployeeMaxSalaries () {
+    private static Employee getEmployeeMaxSalaries () {
         float maxSalaries = Float.MIN_VALUE;
         Employee employeeMaxSalaries = null;
         for (int i = 0; i < employees.length; i++) {
@@ -52,16 +52,16 @@ public class Main {
         }
         return employeeMaxSalaries;
     }
-    public static float getEmployeeAverageSalaries () {
+    private static float getEmployeeAverageSalaries () {
         float sum = 0f;
         int countEmployee = 0;
         for (Employee employee : employees) {
             countEmployee++;
             sum = sum + employee.getSalary();
         }
-        return sum;
+        return sum / countEmployee;
     }
-    public static void printNameAllEmployee () {
+    private static void printNameAllEmployee () {
         for (Employee employee : employees) {
             System.out.println(employee.getFIO());
         }
